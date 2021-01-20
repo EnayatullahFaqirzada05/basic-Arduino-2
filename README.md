@@ -33,6 +33,51 @@ void loop() {
 Prees the button to turn the LED on.
 
 ### Code
+
+
+
+
+
+/*
+  Enayatulllah
+  button LED assignmennt
+  push the button LED turns on
+*/
+int LEDpinBLUE = 12;
+int buttonpin1 = 2;
+int LEDpinRED = 13;
+int buttonpin2 = 4;
+int buttonstate = 0;
+
+void setup() {
+  pinMode(LEDpinBLUE, OUTPUT);
+  pinMode(buttonpin1, INPUT); 
+  pinMode(LEDpinRED, OUTPUT);
+  pinMode(buttonpin2, INPUT);
+  Serial.begin(9600);
+
+
+}
+
+void loop() {
+  buttonstate = digitalRead(buttonpin1);
+  Serial.println(buttonstate);
+  if (buttonstate == 1) {
+    digitalWrite(LEDpinBLUE, HIGH);
+  }
+  else {
+    digitalWrite(LEDpinBLUE, LOW);
+  }
+  
+  buttonstate = digitalRead(buttonpin2);
+  Serial.println(buttonstate);
+  if (buttonstate == 1) {
+    digitalWrite(LEDpinRED, HIGH);
+  }
+  else {
+    digitalWrite(LEDpinRED, LOW);
+  }
+}
 /*
 /*
   Enayatulllah
