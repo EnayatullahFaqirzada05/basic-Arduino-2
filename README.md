@@ -118,3 +118,43 @@ https://scontent.xx.fbcdn.net/v/t1.15752-9/139786470_884136242353543_54626641069
 
 
 
+
+
+
+Serovo
+
+#include <Servo.h>
+
+Servo myServo;
+
+
+int btn1pin = 8;
+int btn2pin = 9;
+int servopin = 13;
+int button1state;
+int button2state;
+
+void setup() {
+  Serial.begin(9600);
+  myServo.attach(servopin);
+
+}
+
+void loop() {
+  button1state = digitalRead(btn1pin);
+  button2state = digitalRead(btn2pin);
+  if (button1state == HIGH) {
+    Serial.println("Button 1 is on");
+    myServo.write(180);
+  }
+
+  button2state = digitalRead(btn2pin);
+  
+  if (button2state == 1) {
+    Serial.println("Button 2 is on");
+    myServo.write(0);
+  }
+delay(250);
+}
+
+
